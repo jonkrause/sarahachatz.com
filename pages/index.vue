@@ -1,9 +1,9 @@
 <template>
   <section class="container">
-    <audio autoplay loop>
-     <source src="background-music.mp3" type="audio/mpeg">
+    <!-- <audio autoplay loop>
+     <source src="https://soundimage.org/wp-content/uploads/2018/10/Time-Running-Out_Looping.mp3" type="audio/mpeg">
         <p>If you're reading this, audio isn't supported.</p>
-    </audio>
+    </audio> -->
     <p class="title-text">sarahachatz.com</p>
   </section>
 </template>
@@ -12,6 +12,17 @@
 import {Howl, Howler} from 'howler'
 
 export default {
+  mounted: function playSound() {
+            var sound = new Howl({
+                src: 'background-music.mp3',
+                autoplay: true,
+                loop: true,
+                volume: 0.5,
+                onend: function() {
+                    console.log('Finished!');
+                }
+            });            
+        },
   components: {
   }
 }
