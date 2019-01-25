@@ -1,30 +1,23 @@
 <template>
   <section class="container">
-    <!-- <audio autoplay loop>
-     <source src="https://soundimage.org/wp-content/uploads/2018/10/Time-Running-Out_Looping.mp3" type="audio/mpeg">
-        <p>If you're reading this, audio isn't supported.</p>
-    </audio> -->
     <p class="title-text">sarahachatz.com</p>
+    <sound-control />
   </section>
 </template>
 
 <script>
-import {Howl, Howler} from 'howler'
+import SoundControl from '~/components/SoundControl'
 
 export default {
-  mounted: function playSound() {
-            var sound = new Howl({
-                src: 'background-music.mp3',
-                autoplay: true,
-                loop: true,
-                volume: 0.5,
-                onend: function() {
-                    console.log('Finished!');
-                }
-            });            
-        },
+  data() {
+    return {
+      playMusic: false,
+      music: null
+    }
+  },
   components: {
-  }
+    SoundControl
+  },
 }
 </script>
 
@@ -46,19 +39,13 @@ export default {
 .title-text {
   font-size: 24px;
   font-weight: 200;
-  color: rgb(163,83,133);
+  // color: rgb(163,83,133);
   animation: text-strobe-style 100*20s ease-in-out, text-strobe-color 800s ease-in-out;
 }
 
-$alpha: 1;
-$alpha2: 3;
-$delay: 1;
-$test: 0%;
-$test2: 100%;
-$shadow: 15px;
-
+$p: 0%;
 $color: 255;
-$fontSizeMax: 80;
+$alpha: 1;
 $letterSpacingMax: 70;
 $shadowRandomHigh: 120;
 $shadowRandomLow: 60;
@@ -68,15 +55,14 @@ $shadowAlphaMin: (1.0)-0.4;
 
 @keyframes back-strobe {
   @for $x from 0 to 100 {
-  #{$test+$x} {background-color: rgba(random($color), random($color), random($color), $alpha)}
+  #{$p+$x} {background-color: rgba(random($color), random($color), random($color), $alpha);}
   }
 }
 
 @keyframes text-strobe-style {
   @for $x from 0 to 100 {
-  #{$test+$x} {
+  #{$p+$x} {
     text-shadow: (random($shadowRandomHigh)-$shadowRandomLow)+px (random($shadowRandomHigh)-$shadowRandomLow)+px random($shadowBlurMax)+px rgba(random($color), random($color), random($color), $shadowAlphaMin);
-    // font-size: random($fontSizeMax)+px;
     letter-spacing: random($letterSpacingMax)+px;
     }
   }
@@ -84,7 +70,7 @@ $shadowAlphaMin: (1.0)-0.4;
 
 @keyframes text-strobe-color {
   @for $x from 0 to 100 {
-  #{$test+$x} {
+  #{$p+$x} {
     color: rgba(random($color), random($color), random($color), $alpha);
     }
   }
