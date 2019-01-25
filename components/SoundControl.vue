@@ -66,7 +66,6 @@ export default {
   mounted: function() {
     this.backgroundMusic = new Howl({
       src: "background-music.mp3",
-      autoplay: false,
       loop: true,
       volume: 0.5
     });
