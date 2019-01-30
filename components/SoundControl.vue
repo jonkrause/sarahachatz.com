@@ -66,7 +66,7 @@ export default {
   mounted: function() {
     console.log("zomg ♥")
     this.backgroundMusic = new Howl({
-      src: "../../static/background-music.mp3",
+      src: "background-music.mp3",
       loop: true,
       volume: 0.5
     });
