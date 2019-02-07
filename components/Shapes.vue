@@ -63,7 +63,7 @@
         :style="{
         clipPath: 'polygon(' + tri.tr.r1 + '%' + tri.tr.r2 + '%,' + tri.tr.r3 + '%' + tri.tr.r4 + '%,' + tri.tr.r5 + '%' + tri.tr.r6 + '%)',
         backgroundColor: 'rgba(' + colors[index].r + ', ' + colors[index].g + ', ' + colors[index].b + ', ' + 0 + '.' + colors[index].a + ')',
-        transition: 15 + 's linear'
+        transition: 10 + 's linear'
       }"
       ></div>
     </div>
@@ -91,7 +91,7 @@ export default {
 
     setInterval(() => {
       this.testRand();
-    }, 15000);
+    }, 10000);
 
     setInterval(() => {
       this.newColors2();
