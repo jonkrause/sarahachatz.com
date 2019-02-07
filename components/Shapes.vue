@@ -63,7 +63,7 @@
         :style="{
         clipPath: 'polygon(' + tri.tr.r1 + '%' + tri.tr.r2 + '%,' + tri.tr.r3 + '%' + tri.tr.r4 + '%,' + tri.tr.r5 + '%' + tri.tr.r6 + '%)',
         backgroundColor: 'rgba(' + colors[index].r + ', ' + colors[index].g + ', ' + colors[index].b + ', ' + 0 + '.' + colors[index].a + ')',
-        transition: 10 + 's linear'
+        transition: 16 + 's linear'
       }"
       ></div>
     </div>
@@ -91,7 +91,7 @@ export default {
 
     setInterval(() => {
       this.testRand();
-    }, 10000);
+    }, 16000);
 
     setInterval(() => {
       this.newColors2();
@@ -105,7 +105,7 @@ export default {
     updateNewShape() {
       setTimeout(() => {
         this.randObjValues(0, 100, this.shapes.slice(-1)[0].tr);
-      }, 10);
+      }, 80);
     },
     testRand() {
       for (var i = 0; i < this.shapes.length; i++) {
