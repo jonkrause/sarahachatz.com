@@ -16,7 +16,8 @@
     "howler": "^2.1.1",
     "node-sass": "^4.11.0",
     "nuxt": "^2.0.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "tone": "^13.4.9"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

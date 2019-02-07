@@ -21,11 +21,13 @@
       transform: 'translate3d(' + skewX + 'px,' + skewY + 'px,' + skewZ + 'px) skew('+ skewX + 'deg,' + skewY + 'deg)', 
     transition: 8+'s' }">sarahachatz.com</p>-->
     <sound-control/>
+    <shapes/>
   </section>
 </template>
 
 <script>
 import SoundControl from "~/components/SoundControl";
+import Shapes from "~/components/Shapes";
 
 export default {
   data() {
@@ -146,7 +148,8 @@ export default {
     }
   },
   components: {
-    SoundControl
+    SoundControl,
+    Shapes
   }
 };
 </script>
@@ -163,8 +166,9 @@ export default {
 
 .title-text {
   font-size: 24px;
-  font-weight: 200;
+  font-weight: lighter;
   color: rgb(163, 83, 133);
+  z-index: 1;
   // animation: text-strobe-style 100*20s ease-in-out, text-strobe-color 800s ease-in-out;
 }
 .input-box:focus {
