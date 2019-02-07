@@ -188,7 +188,7 @@ export default {
   cursor: pointer;
   transition: 0.3s;
   & .front {
-    fill: rgba(255, 255, 255, 0.4) !important;
+    fill: rgba(255, 255, 255, 0.3) !important;
     transition: all 0.3s ease;
   }
   & .back {
@@ -197,7 +197,7 @@ export default {
   }
   &:hover {
     .front {
-      fill: rgba(255, 255, 255, 0.7) !important;
+      fill: rgba(255, 255, 255, 0.6) !important;
       transition: all 0.3s ease;
     }
     .back {
@@ -214,7 +214,7 @@ export default {
 }
 .counter {
   margin-right: 0.5rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.3);
   font-weight: 900;
   font-size: 1.2em;
 }
